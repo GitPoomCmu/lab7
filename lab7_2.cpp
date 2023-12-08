@@ -1,18 +1,37 @@
-//Dialog of the first example is given below.
+#include <iostream>
+using namespace std;
 
-/*
-Fahsai: Sawadee ka...Can you tell me your name?
-?????: Luke Skywalker
-Fahsai: Wow!!! Luke Skywalker is a really cool name.
-Fahsai: I think you are an Engineering student. What is your student ID?
-Luke Skywalker: 590610999
-Fahsai: I think you may be GEAR 47. I have a free movie ticket for you.
-Fahsai: Let's go to the cinema together!!!
-Fahsai: What movie do you want to watch?
-Luke Skywalker: Star Wars VII
-Fahsai: So....which day are you free to go with me?
-Luke Skywalker: Next Monday
-Fahsai: Next Monday....that is OK!!! I'm looking forward to watching Star Wars VII with you.
-Luke Skywalker: May the Force be with you krub
-Fahsai: 555+ see you Next Monday. Bye Bye \(^ ^)/
-*/
+string name = "?????";
+
+string user(){
+    string answer;
+    cout << name << ": ";
+    getline(cin, answer);
+    return answer;
+}
+
+void fahsai(string input){
+    cout << "Fahsai: " << input << "\n";
+}
+
+int main() {
+    string movie, day, id;
+    int gear;
+    
+    fahsai("Sawadee ka...Can you tell me your name?");
+    name = user();
+    fahsai("Wow!!! " + name + " is a really cool name.");
+    fahsai("I think you are an Engineering student. What is your student ID?");
+    id = user();
+    gear = stoi(id.erase(2)) - 12;
+    fahsai("I think you may be GEAR " + to_string(gear) + ". I have a free movie ticket for you.");
+    fahsai("Let's go to the cinema together!!!");
+    fahsai("What movie do you want to watch?");
+    movie = user();
+    fahsai("So....which day are you free to go with me?");
+    day = user();
+    fahsai(day + "....that is OK!!! I'm looking forward to watching " + movie + " with you.");
+    user();
+    fahsai("555+ see you " + day + ". Bye Bye \\(^ ^)/");
+    return 0;
+}
