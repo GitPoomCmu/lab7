@@ -16,15 +16,13 @@ void fahsai(string input){
 
 int main() {
     string movie, day, id;
-    int gear;
     
     fahsai("Sawadee ka...Can you tell me your name?");
     name = user();
     fahsai("Wow!!! " + name + " is a really cool name.");
     fahsai("I think you are an Engineering student. What is your student ID?");
     id = user();
-    gear = stoi(id.erase(2)) - 12;
-    fahsai("I think you may be GEAR " + to_string(gear) + ". I have a free movie ticket for you.");
+    fahsai("I think you may be GEAR " + to_string(stoi(id.erase(2)) - 12) + ". I have a free movie ticket for you.");
     fahsai("Let's go to the cinema together!!!");
     fahsai("What movie do you want to watch?");
     movie = user();
